@@ -1,9 +1,10 @@
+import mensajeros.*
 
 describe "Mensajeros" {
 	
 	test "Test 1" {
         paquete.estaPago(false)
-        assert.equals(false,mensajeria.puedeEnviarElPaquete(laMatrix,paquete,neo))
+        assert.notThat(mensajeria.puedeEnviarElPaquete(laMatrix,paquete,neo))
 	}
 
     test "Test 2" {
@@ -16,11 +17,13 @@ describe "Mensajeros" {
         saraConnor.cambiarPeso(70)
         camion.cantAcoplados(1)
         saraConnor.cambiarVehiculo(camion)
-        assert.that(mensajeria.puedeEnviarElPaquete(laMatrix,paquete,neo))
+        assert.notThat(mensajeria.puedeEnviarElPaquete(puenteBrooklyn,paquete,saraConnor))
 	}
 
     test "Test 4" {
-        paquete.estaPago(false)
-        assert.that(mensajeria.puedeEnviarElPaquete(laMatrix,paquete,neo))
+        paquete.estaPago(true)
+        saraConnor.cambiarPeso(70)
+        saraConnor.cambiarVehiculo(moto)
+        assert.that(mensajeria.puedeEnviarElPaquete(puenteBrooklyn,paquete,saraConnor))
 	}
 }
