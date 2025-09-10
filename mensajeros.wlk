@@ -27,23 +27,32 @@ object laMatrix {
 
 object jeanGray {
 	var property peso = 65
-	var property puedeLlamar = true
+	const puedeLlamar = true
+  method puedeLlamar() {
+    return puedeLlamar
+  }
 }
 
 object neo {
   var property puedeLlamar = true
-
+  const peso = 0
+  method peso() {
+    return peso
+  }
 }
 
 object saraConnor {
-  var property puedeLlamar = false
+  const puedeLlamar = false
   var vehiculo = camion
-  var peso = 0
+  var pesoPropio = 0
+  method puedeLlamar() {
+    return puedeLlamar
+  }
   method peso() {
-    return peso + vehiculo.peso()
+    return pesoPropio + vehiculo.peso()
   }
   method cambiarPeso(_peso) {
-	  peso = _peso
+	  pesoPropio = _peso
   }
   method cambiarVehiculo(_vehiculo) {
 	  vehiculo = _vehiculo
@@ -51,13 +60,15 @@ object saraConnor {
 }
 
 object moto {
-  var property peso = 70
-
+  const peso = 100
+  method peso() {
+    return peso
+  }
 }
 
 object camion {
   const peso = 500
-  var property cantAcoplados = 0
+  var cantAcoplados = 0
   method agregarAcoplado(cantidad) {
 	  cantAcoplados = cantAcoplados + cantidad
   }
