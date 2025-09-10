@@ -1,0 +1,29 @@
+import mensajeros.*
+
+describe "Mensajeros" {
+	
+	test "Test 1" {
+        paquete.estaPago(false)
+        assert.notThat(paquete.puedeEnviarElPaquete(laMatrix,paquete,neo))
+	}
+
+    test "Test 2" {
+        paquete.estaPago(true)
+        assert.that(paquete.puedeEnviarElPaquete(laMatrix,paquete,jeanGray))
+	}
+	
+    test "Test 3" {
+        paquete.estaPago(true)
+        saraConnor.cambiarPeso(70)
+        camion.cantAcoplados(1)
+        saraConnor.cambiarVehiculo(camion)
+        assert.notThat(paquete.puedeEnviarElPaquete(puenteBrooklyn,paquete,saraConnor))
+	}
+
+    test "Test 4" {
+        paquete.estaPago(true)
+        saraConnor.cambiarPeso(70)
+        saraConnor.cambiarVehiculo(moto)
+        assert.that(paquete.puedeEnviarElPaquete(puenteBrooklyn,paquete,saraConnor))
+	}
+}
