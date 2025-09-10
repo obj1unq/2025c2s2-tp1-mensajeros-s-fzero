@@ -1,14 +1,9 @@
-object mensajeria {
-  
-
-	method puedeEnviarElPaquete(destino, paquete, empleado) {
-		return destino.puedeTransportar(empleado) && paquete.estaPago()
-	}
-
-}
 
 object paquete {
   var property estaPago = true 
+  method puedeEnviarElPaquete(destino, paquete, empleado) {
+	return destino.puedeTransportar(empleado) && paquete.estaPago()
+	}
 }
 
 
@@ -69,11 +64,8 @@ object moto {
 object camion {
   const peso = 500
   var cantAcoplados = 0
-  method agregarAcoplado(cantidad) {
-	  cantAcoplados = cantAcoplados + cantidad
-  }
-  method quitarAcoplados(cantidad) {
-	  cantAcoplados = cantAcoplados - cantidad
+  method cantAcoplados(_cantAcoplados) {
+    cantAcoplados = _cantAcoplados
   }
   method peso() {
 	  return peso + (cantAcoplados * 500)
